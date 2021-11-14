@@ -5,6 +5,10 @@ from keras.models import Sequential
 from keras.layers import Dense, Activation, Flatten, Dropout
 from tensorflow.keras.optimizers import Adam
 
+from rl.agents.dqn import DQNAgent
+from rl.policy import EpsGreedyQPolicy
+from rl.memory import SequentialMemory
+
 '''
 A pole is attached by an un-actuated joint to a cart, which moves along a 
 frictionless track. The system is controlled by applying a force of +1 or -1 
@@ -13,10 +17,6 @@ falling over. A reward of +1 is provided for every timestep that the pole
 remains upright. The episode ends when the pole is more than 15 degrees from 
 vertical, or the cart moves more than 2.4 units from the center.
 '''
-from rl.agents.dqn import DQNAgent
-from rl.policy import EpsGreedyQPolicy
-from rl.memory import SequentialMemory
-
 
 ENV_NAME = 'CartPole-v1'
 
